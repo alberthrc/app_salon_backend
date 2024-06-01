@@ -42,6 +42,10 @@ userShema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, salt);
 });
 
+userShema.methods.checkPassword = async function (inputPassword) {
+    return await bcrypt.compare(inputPassword, this.password);
+};
+
 const User = mongoose.model("User", userShema);
 
 

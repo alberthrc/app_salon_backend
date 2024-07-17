@@ -14,6 +14,8 @@ import authRoutes from "./routes/authRoutes.js"
 
 import appoinmentRoutes from "./routes/appoinmentRoutes.js"
 
+import userRoutes from "./routes/userRoutes.js"
+
 
 //Variable de entorno
 dotenv.config()
@@ -51,6 +53,8 @@ app.use(cors(corsOption))
 app.use("/api/services", servicesRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/appoinments", appoinmentRoutes)
+app.use("/api/users", userRoutes  )
+
 
 //Definir puerto
 const PORT = process.env.PORT || 4000;
